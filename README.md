@@ -1,23 +1,23 @@
-# Secretless Idempotent MacOS setup with Ansible
+# Secretless Idempotent macOS setup with Ansible
 
 Migration from a different repository is ongoing.
 
-This repository contains my MacOS configuration.
+This repository contains my macOS configuration.
 Most of the steps are automated. The script might ask for sudo password.
-There are some manual steps, after the installations.
-Goal is not to fully automate, but ensure the smoothest possible start on a new 
+There are some manual steps after the installations.
+The goal is not to fully automate but ensure the smoothest possible start on a new
 installation.
 
-It also helps me to keep more or less the same environment both on my personal and work 
+It also helps me to keep more or less the same environment both on my personal and work
 machine, which helps me to reduce the context switching.
 
-I don't recommend to use it as it is. Get inspired, copy part of it.
+I don't recommend using it as it is. Get inspired, copy part of it.
 
 I spend about 2-3 years to get to this stage, I only install apps and tools
 that I need.
 
-This repository is kept up-to-date with my current needs, sometimes includes workarounds.
-I update them if necessary, if I find an obsticle.
+This repository is kept up-to-date with my current needs; it includes workarounds.
+I update them if necessary when I find an obstacle.
 
 The repository doesn't contain any secrets.
 
@@ -32,8 +32,8 @@ Idempotent, but needed only once.
 Download and execute the `initial-setup.sh` file.
 That script does the following:
 - Environment setup, so my machine setups can be slightly different
-- Install requirements: homebrew, ansible and gpg
-- setup gpg & ssh
+- Install requirements: homebrew, Ansible, and GPG
+- setup GPG & ssh
 - Clone the repository
 
 ### 2. Start the setup process
@@ -48,5 +48,5 @@ make
 
 ### 3. Manual steps
 
-These steps needs to be done mostly once
+Most of these steps need to be done once.
 
