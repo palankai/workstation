@@ -53,10 +53,11 @@ ln -sF $(which gpgconf) ~/opt/links/gpgconf
 # Fix this, this isn't idempotent
 echo "pinentry-program $(which pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
 echo "  [-] Start GPG Agent"
-gpgconf --launch gpg-agent
+killall gpg-agent
+gpg-agent --daemon --homedir $HOME/.gnupg
+
 echo "  [-] Setup temporary SSH Agent"
 export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
-
 
 echo "[-] Install cloning workstation setup..."
 mkdir -p ~/opt
@@ -76,8 +77,8 @@ ln -s ~/opt/workstation/dotfiles/gnupg/gpg.conf ~/.gnupg/gpg.conf
 ln -s ~/opt/workstation/dotfiles/gnupg/scdaemon.conf ~/.gnupg/scdaemon.conf
 
 killall gpg-agent
-gpgconf --launch gpg-agent
-# gpg-agent --daemon --homedir $HOME/.gnupg
+# gpgconf --launch gpg-agent
+gpg-agent --daemon --homedir $HOME/.gnupg
 
 ln -s ~/opt/workstation/bin/homebrew.gpg.gpg-agent.plist ~/Library/LaunchAgents/homebrew.gpg.gpg-agent.plist
 launchctl load -F ~/Library/LaunchAgents/homebrew.gpg.gpg-agent.plist
