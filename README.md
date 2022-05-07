@@ -30,7 +30,7 @@ The repository doesn't contain any secrets.
 Idempotent, but needed only once.
 
 Download and execute the `initial-setup.sh` file.
-Simplified install: `sh -c "$(curl -sSL https://github.com/palankai/workstation/blob/master/initial-setup.sh)"`
+Simplified install: `sh -c "$(curl -sSL https://raw.githubusercontent.com/palankai/workstation/master/initial-setup.sh)"`
 
 That script does the following:
 - Environment setup, so my machine setups can be slightly different
