@@ -48,7 +48,7 @@ gpg -k
 
 echo "  [-] Setup links"
 ln -s $(brew --prefix pinentry-mac) ~/opt/links/pinentry-mac
-ln -s $(brew --prefix gpgconf) ~/opt/links/gpgconf
+ln -s $(which gpgconf) ~/opt/links/gpgconf
 
 echo "pinentry-program $HOME/opt/links/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
 echo "  [-] Start GPG Agent"
