@@ -30,6 +30,8 @@ The repository doesn't contain any secrets.
 Idempotent, but needed only once.
 
 Download and execute the `initial-setup.sh` file.
+Simplified install: `sh -c "$(curl -sSL https://github.com/palankai/workstation/blob/master/initial-setup.sh)"`
+
 That script does the following:
 - Environment setup, so my machine setups can be slightly different
 - Install requirements: homebrew, Ansible, and GPG
