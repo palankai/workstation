@@ -47,10 +47,11 @@ echo "  [-] Initialise GPG"
 gpg -k
 
 echo "  [-] Setup links"
-ln -sF $(brew --prefix pinentry-mac) ~/opt/links/pinentry-mac
+ln -sF $(which pinentry-mac) ~/opt/links/pinentry-mac
 ln -sF $(which gpgconf) ~/opt/links/gpgconf
 
-echo "pinentry-program $HOME/opt/links/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+# Fix this, this isn't idempotent
+echo "pinentry-program $(which pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
 echo "  [-] Start GPG Agent"
 gpgconf --launch gpg-agent
 echo "  [-] Setup temporary SSH Agent"
@@ -62,7 +63,7 @@ mkdir -p ~/opt
 
 if test ! -d "~/opt/workstation" ; then
   echo "[-] Clone workstation setup"
-  (cd ~/opt; git clone git@gitlab.com:palankai/workstation.git)
+  (cd ~/opt; git clone git@github.com:palankai/workstation.git)
 else
   echo "[-] update workstation setup"
   (cd ~/opt/workstation; git pull)
