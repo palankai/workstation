@@ -32,7 +32,7 @@ else
 fi
 
 echo "[-] Make links folder"
-mkdir ~/opt/links
+mkdir -p ~/opt/links
 
 echo "[-] Installing homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -47,8 +47,8 @@ echo "  [-] Initialise GPG"
 gpg -k
 
 echo "  [-] Setup links"
-ln -s $(brew --prefix pinentry-mac) ~/opt/links/pinentry-mac
-ln -s $(which gpgconf) ~/opt/links/gpgconf
+ln -sF $(brew --prefix pinentry-mac) ~/opt/links/pinentry-mac
+ln -sF $(which gpgconf) ~/opt/links/gpgconf
 
 echo "pinentry-program $HOME/opt/links/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
 echo "  [-] Start GPG Agent"
