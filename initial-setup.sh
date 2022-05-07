@@ -41,7 +41,7 @@ echo "[-] Install gnupg..."
 brew install gnupg pinentry-mac
 echo "  [-] Initialise GPG"
 gpg -k
-echo "pinentry-program /opt/homebrew/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+echo "pinentry-program $(brew --prefix pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
 echo "  [-] Start GPG Agent"
 gpgconf --launch gpg-agent
 echo "  [-] Setup temporary SSH Agent"
