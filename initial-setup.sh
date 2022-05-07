@@ -31,6 +31,9 @@ else
     source $HOME/.localenv
 fi
 
+echo "[-] Make links folder"
+mkdir ~/opt/links
+
 echo "[-] Installing homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -39,9 +42,15 @@ brew install ansible
 
 echo "[-] Install gnupg..."
 brew install gnupg pinentry-mac
+
 echo "  [-] Initialise GPG"
 gpg -k
-echo "pinentry-program $(brew --prefix pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
+
+echo "  [-] Setup links"
+ln -s $(brew --prefix pinentry-mac) ~/opt/links/pinentry-mac
+ln -s $(brew --prefix gpgconf) ~/opt/links/gpgconf
+
+echo "pinentry-program $HOME/opt/links/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
 echo "  [-] Start GPG Agent"
 gpgconf --launch gpg-agent
 echo "  [-] Setup temporary SSH Agent"
