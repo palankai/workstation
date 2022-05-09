@@ -82,6 +82,7 @@ killall gpg-agent
 # gpgconf --launch gpg-agent
 gpg-agent --daemon --homedir $HOME/.gnupg
 
+mkdir -p ~/Library/LaunchAgents/
 ln -s ~/opt/workstation/bin/homebrew.gpg.gpg-agent.plist ~/Library/LaunchAgents/homebrew.gpg.gpg-agent.plist
 launchctl load -F ~/Library/LaunchAgents/homebrew.gpg.gpg-agent.plist
 
