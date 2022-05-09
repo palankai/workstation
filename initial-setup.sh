@@ -50,10 +50,9 @@ echo "  [-] Setup links"
 ln -sF $(which pinentry-mac) ~/opt/links/pinentry-mac
 ln -sF $(which gpgconf) ~/opt/links/gpgconf
 
-# Fix this, this isn't idempotent
-echo "pinentry-program $(which pinentry-mac)" >> ~/.gnupg/gpg-agent.conf
+echo "pinentry-program $(which pinentry-mac)" > ~/.gnupg/gpg-agent.conf
 echo "  [-] Start GPG Agent"
-killall gpg-agent
+killall gpg-agent || true
 gpg-agent --daemon --homedir $HOME/.gnupg
 
 echo "  [-] Setup temporary SSH Agent"
