@@ -1,0 +1,13 @@
+- name: haskell-stack
+  tags:
+  - haskell
+  homebrew:
+    name: haskell-stack
+    state: "{{ CODE.haskell | default('absent') }}"
+
+- name: ghc
+  tags:
+  - haskell
+  homebrew:
+    name: ghc
+    state: "{{ CODE.haskell | default('absent') }}"

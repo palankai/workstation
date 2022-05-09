@@ -1,0 +1,5 @@
+- name: nginx
+  homebrew:
+    name: nginx
+    state: "{{ STATES.nginx | default('absent')  }}"
+

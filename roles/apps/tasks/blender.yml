@@ -1,0 +1,5 @@
+
+- name: Blender
+  homebrew_cask:
+    name: blender
+    state: "{{ State_Blender | default('absent')  }}"

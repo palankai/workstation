@@ -1,0 +1,66 @@
+- name: AWS tap
+  homebrew_tap:
+    name: aws/tap
+
+- name: AWS tap
+  homebrew_tap:
+    name: xen0l/homebrew-taps
+
+- name: awscli
+  homebrew:
+    name: awscli
+    state: present
+
+- name: Make the aws credential folders
+  file:
+    path: ~/.aws
+    state: directory
+    mode: '1755'
+
+- name: Make config link
+  file:
+    src: ~/opt/workstation/sensitive/dotfiles/aws.conf
+    dest: ~/.aws/config
+    state: link
+
+- name: Make aws-vault link
+  file:
+    src: ~/opt/workstation/bin/aws-vault
+    dest: ~/opt/bin/aws-vault
+    state: link
+
+- name: AWS Fuzzy
+  pip:
+    name: aws-fuzzy-finder
+    state: latest
+
+- name: AWS Vault
+  homebrew_cask:
+    name: "aws-vault"
+    state: "{{ STATES.aws_vault | default('latest')  }}"
+
+- name: AWS ECR Helper
+  homebrew:
+    name: docker-credential-helper-ecr
+    state: latest
+
+- name: AWS SAM
+  homebrew:
+    name: aws-sam-cli
+    state: absent
+
+- name: AWS GATE
+  homebrew:
+    name: aws-gate
+    state: latest
+
+- name: session manager plugin
+  homebrew_cask:
+    name: session-manager-plugin
+    state: latest
+
+- name: AWS Amplify
+  community.general.yarn:
+    name: "@aws-amplify/cli"
+    global: yes
+    state: absent

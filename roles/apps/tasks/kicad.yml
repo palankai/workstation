@@ -1,0 +1,5 @@
+
+- name: KiCAD
+  homebrew_cask:
+    name: kicad
+    state: "{{ State_KiCAD | default('absent')  }}"

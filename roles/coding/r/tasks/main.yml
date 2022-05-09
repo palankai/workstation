@@ -1,0 +1,6 @@
+- name: R
+  tags:
+  - r
+  homebrew:
+    name: r
+    state: "{{ CODE.r | default('absent') }}"

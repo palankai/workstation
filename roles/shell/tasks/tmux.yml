@@ -1,0 +1,10 @@
+- name: terminal | tmux
+  homebrew:
+    name: tmux
+
+- name: terminal | tmux | configuration
+  file:
+    src: ~/opt/workstation/dotfiles/tmux.conf
+    dest: ~/.tmux.conf
+    state: link
+    force: true

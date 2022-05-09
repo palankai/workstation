@@ -1,0 +1,9 @@
+- name: desktop | backblaze
+  homebrew_cask:
+    name: backblaze
+    state: "{{ STATES.backblaze | default('absent')  }}"
+
+- name: desktop | backblaze downloader
+  homebrew_cask:
+    name: backblaze-downloader
+    state: "{{ STATES.backblaze | default('absent')  }}"

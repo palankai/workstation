@@ -1,0 +1,9 @@
+- name: kubernetes
+  homebrew:
+    name: kubernetes-cli
+    state: "{{ STATES.kubernetes | default('absent')  }}"
+
+- name: kubernetes | kubernetes-service-catalog-client
+  homebrew:
+    name: kubernetes-service-catalog-client
+    state: "{{ STATES.kubernetes | default('absent')  }}"

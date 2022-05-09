@@ -1,0 +1,4 @@
+- name: adobe creative cloud
+  homebrew_cask:
+    name: adobe-creative-cloud
+    state: "{{ STATES.adobe | default('present') }}"

@@ -1,0 +1,5 @@
+- name: Signal
+  homebrew_cask:
+    name: Signal
+    state: "{{ Comms_Signal | default('latest')  }}"
+    

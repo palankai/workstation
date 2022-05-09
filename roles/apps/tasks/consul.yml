@@ -1,0 +1,5 @@
+- name: Consul
+  homebrew:
+    name: consul
+    state: "{{ STATES.consul | default('absent')  }}"
+

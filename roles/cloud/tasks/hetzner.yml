@@ -1,0 +1,4 @@
+- name: Hetzner Cloud CLI (hcloud)
+  homebrew:
+    name: hcloud
+    state: absent

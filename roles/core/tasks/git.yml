@@ -1,0 +1,23 @@
+- name: git
+  homebrew:
+    name:
+     - git
+    state: latest
+
+- name: git-extras
+  homebrew:
+    name: git-extras
+
+- name: git | Setup global gitignore
+  file:
+    src: ~/opt/workstation/dotfiles/gitignore_global
+    dest: ~/.gitignore_global
+    state: link
+    force: true
+
+- name: git | Setup git config
+  file:
+    src: ~/opt/workstation/sensitive/dotfiles/gitconfig
+    dest: ~/.gitconfig
+    state: link
+    force: true

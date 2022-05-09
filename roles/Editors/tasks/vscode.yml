@@ -1,0 +1,4 @@
+- name: Visual Studio Code
+  homebrew_cask:
+    name: visual-studio-code
+    state: "{{ Editors_VSCode | default('present')  }}"

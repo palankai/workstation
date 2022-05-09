@@ -1,0 +1,5 @@
+
+- name: keepassxc
+  homebrew_cask:
+    name: keepassxc
+    state: latest

@@ -1,0 +1,5 @@
+- name: Insomnia
+  homebrew_cask:
+    name: insomnia
+    state: "{{ STATES.insomnia | default('absent')  }}"
+

@@ -1,0 +1,23 @@
+- import_tasks: vscode.yml
+  tags:
+  - VSCode
+
+- import_tasks: sublime-text.yml
+  tags:
+  - Sublime-text
+
+- import_tasks: vim.yml
+  tags:
+  - Vim
+
+- import_tasks: atom.yml
+  tags:
+  - Atom
+
+- import_tasks: visual-studio.yml
+  tags:
+  - VisualStudio
+
+- import_tasks: nosql-workbench.yml
+  tags:
+  - NoSQLWorkbench

@@ -1,0 +1,7 @@
+- name: xmlsec1
+  tags:
+    - xmlsec1
+    - libxmlsec1
+  homebrew:
+    name: libxmlsec1
+    state: "{{ Drivers_Libs_xmlsec1 | default('present')  }}"

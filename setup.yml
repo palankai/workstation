@@ -1,0 +1,36 @@
+- hosts: all
+  connection: local
+  gather_facts: true
+  vars:
+    WORKSTATION: "{{ lookup('envfile', '~/.localenv', 'WORKSTATION' ) }}"
+  vars_files:
+    - "vars/{{ WORKSTATION }}-macos.yml"
+  roles:
+    - {name: core, tags: ["core"]}
+    - {name: Libs, tags: ["Libs"]}
+    - {name: Drivers, tags: ["Drivers"]}
+    - shell
+    - folders
+    - {name: cloud, tags: ["cloud"]}
+    - {name: treasury, tags: ["treasury"]}
+    - coding/python
+    - coding/nodejs
+    - coding/go
+    - coding/java
+    - coding/scala
+    - coding/groovy
+    - coding/kotlin
+    - coding/dotnet
+    - coding/c
+    - coding/clojure
+    - coding/erlang
+    - coding/haskell
+    - coding/r
+    - coding/php
+    - coding/unity
+    - coding/libs
+    - apps
+    - {name: Browsers, tags: ["Browsers"]}
+    - {name: Comms, tags: ["Comms"]}
+    - {name: Editors, tags: ["Editors"]}
+    - {name: unsorted, tags: ["unsorted"]}

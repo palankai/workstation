@@ -1,0 +1,20 @@
+- name: unity
+  tags:
+  - unity
+  homebrew_cask:
+    name: unity
+    state: "{{ CODE.unity | default('absent') }}"
+
+- name: unity-standard-assets
+  tags:
+  - unity
+  homebrew_cask:
+    name: unity-standard-assets
+    state: "{{ CODE.unity | default('absent') }}"
+
+- name: unity-download-assistant
+  tags:
+  - unity
+  homebrew_cask:
+    name: unity-download-assistant
+    state: "{{ CODE.unity | default('absent') }}"

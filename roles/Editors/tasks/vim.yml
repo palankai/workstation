@@ -1,0 +1,17 @@
+- name: terminal | vim
+  homebrew:
+    name: vim
+    state: latest
+
+- name: terminal | vim | configuration
+  file:
+    src: ~/opt/workstation/dotfiles/vimrc.vim
+    dest: ~/.vimrc
+    state: link
+    force: true
+
+- name: terminal | vim | make backup dir
+  file:
+    path: ~/.vim-tmp
+    state: directory
+    mode: '0755'

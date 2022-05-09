@@ -1,0 +1,5 @@
+
+- name: Microsoft Teams
+  homebrew_cask:
+    name: microsoft-teams
+    state: "{{ State_MicrosoftTeams | default('absent')  }}"

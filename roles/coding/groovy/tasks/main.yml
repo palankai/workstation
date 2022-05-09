@@ -1,0 +1,6 @@
+- name: groovy
+  tags:
+  - groovy
+  homebrew:
+    name: groovy
+    state: "{{ CODE.groovy | default('absent') }}"

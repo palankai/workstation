@@ -1,0 +1,4 @@
+- name: obs
+  homebrew_cask:
+    name: obs
+    state: "{{ STATES.obs | default('absent')  }}"

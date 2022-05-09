@@ -1,0 +1,10 @@
+- hosts: all
+  connection: local
+  gather_facts: true
+  vars:
+    WORKSTATION: "{{ lookup('envfile', '~/.localenv', 'WORKSTATION' ) }}"
+    SHARED_SECRET_FOLDER: "{{ lookup('envfile', '~/.localenv', 'SHARED_SECRET_FOLDER') }}"
+  vars_files:
+    - "vars/{{ WORKSTATION }}-macos.yml"
+  roles:
+    - {name: cloud, tags: ["cloud"]}

@@ -1,0 +1,4 @@
+- name: ngrok (localhost forwarder)
+  homebrew_cask:
+    name: ngrok
+    state: latest

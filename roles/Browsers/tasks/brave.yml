@@ -1,0 +1,4 @@
+- name: "Browsers : Brave"
+  homebrew_cask:
+    name: brave-browser
+    state: "{{ Browsers_Brave | default('present')  }}"

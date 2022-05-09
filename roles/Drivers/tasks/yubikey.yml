@@ -1,0 +1,10 @@
+- name: Yubikey Manager
+  homebrew_cask:
+    name: yubico-yubikey-manager
+    state: "{{ Drivers_Yubikey | default('present')  }}"
+
+- name: Yubikey CLI
+  homebrew:
+    name: ykman
+    state: "{{ Drivers_Yubikey | default('present')  }}"
+

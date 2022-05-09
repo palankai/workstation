@@ -1,0 +1,9 @@
+- name: Arduino IDE
+  homebrew_cask:
+    name: arduino
+    state: "{{ State_Arduino | default('absent')  }}"
+
+- name: Arduino CLI
+  homebrew:
+    name: arduino-cli
+    state: "{{ State_Arduino | default('absent')  }}"

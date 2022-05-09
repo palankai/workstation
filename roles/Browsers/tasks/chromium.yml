@@ -1,0 +1,4 @@
+- name: "Browsers : Chromium"
+  homebrew_cask:
+    name: chromium
+    state: "{{ Browsers_Chromium | default('absent')  }}"

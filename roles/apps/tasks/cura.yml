@@ -1,0 +1,4 @@
+- name: Cura (3d slicer)
+  homebrew_cask:
+    name: ultimaker-cura
+    state: "{{ State_Cura | default('absent')  }}"

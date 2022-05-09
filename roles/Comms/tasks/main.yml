@@ -1,0 +1,27 @@
+- import_tasks: signal.yml
+  tags:
+  - Signal
+
+- import_tasks: discord.yml
+  tags:
+  - Discord
+
+- import_tasks: zoom.yml
+  tags:
+  - Zoom
+
+- import_tasks: bluejeans.yml
+  tags:
+  - Bluejeans
+
+- import_tasks: slack.yml
+  tags:
+  - Slack
+
+- import_tasks: weechat.yml
+  tags:
+  - Weechat
+
+- import_tasks: telegram.yml
+  tags:
+  - Telegram

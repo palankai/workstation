@@ -1,0 +1,5 @@
+- name: weechat
+  homebrew:
+    name: weechat
+    state: "{{ APPS_WEECHAT | default('absent')  }}"
+

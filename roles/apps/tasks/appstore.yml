@@ -1,0 +1,40 @@
+- name: Appstore | MacOS App Store CLI
+  homebrew:
+    name: mas
+    state: latest
+
+- name: Appstore | iStatMenus
+  shell: mas install 1319778037
+
+- name: Appstore | FileZilla Pro
+  shell: mas install 1298486723
+  when: "Apps_FileZilla | default('absent') != 'absent'"
+
+- name: Appstore | 1Password
+  shell: mas install 1333542190
+
+- name: Appstore | Libreoffice
+  shell: mas install 921923693
+  when: "Apps_LibreOffice | default('absent') != 'absent'"
+
+- name: Appstore | Unarchiver
+  shell: mas install 425424353
+
+- name: Appstore | FruitJuice
+  shell: mas install 671736912
+
+- name: Appstore | TweetDeck
+  shell: mas install 485812721
+  when: "Apps_TweedDeck | default('absent') != 'absent'"
+
+- name: Appstore | Keynote
+  shell: mas install 409183694
+  when: "Apps_Keynote | default('absent') != 'absent'"
+
+- name: Appstore | Affinity Photo
+  shell: mas install 824183456
+  when: "Apps_AffinityPhoto | default('absent') != 'absent'"
+
+- name: Appstore | Affinity Designer
+  shell: mas install 824171161
+  when: "Apps_AffinityDesigner | default('absent') != 'absent'"

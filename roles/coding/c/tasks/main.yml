@@ -1,0 +1,13 @@
+- name: gcc
+  tags:
+  - c
+  homebrew:
+    name: gcc
+    state: "{{ CODE.c | default('latest') }}"
+
+- name: cmake
+  tags:
+  - c
+  homebrew:
+    name: cmake
+    state: "{{ CODE.c | default('latest') }}"

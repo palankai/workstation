@@ -1,0 +1,4 @@
+- name: duet
+  homebrew_cask:
+    name: duet
+    state: "{{ STATES.duet | default('latest')  }}"

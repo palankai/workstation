@@ -1,0 +1,6 @@
+- name: Etcher
+  homebrew_cask:
+    name: balenaetcher
+    state: "{{ Apps_Etcher | default('absent')  }}"
+
+

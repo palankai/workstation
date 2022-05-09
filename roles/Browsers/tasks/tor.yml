@@ -1,0 +1,5 @@
+- name: "Browsers : Tor Browser"
+  homebrew_cask:
+    name: tor-browser
+    state: "{{ Browsers_Tor | default('absent')  }}"
+    install_options: 'appdir=~/Local'

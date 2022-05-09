@@ -1,0 +1,16 @@
+- name: Echo hello world
+  command: echo hello world
+
+
+# - name: Try to execute code as root
+#   block:
+#     - name: pip (python 2.7)
+#       command: python -m ensurepip --default-pip
+#       become: yes
+#       become_method: sudo
+#       #become_flags: '-s /bin/sh'
+#       args:
+#         creates: /usr/local/bin/pip
+#   rescue:
+#     - debug:
+#         msg: 'Check the error messages, you might need to run this with -K'

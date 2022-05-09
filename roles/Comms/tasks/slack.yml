@@ -1,0 +1,10 @@
+- name: Install if it isn't managed outside
+  block:
+    - name: slack
+      homebrew_cask:
+        name: slack
+        state: "{{ Comms_Slack | default('latest')  }}"
+  rescue:
+    - debug:
+        msg: 'Check the error messages, you might need to run this with -K'
+  when: Comms_Slack | default('latest') != 'managed'

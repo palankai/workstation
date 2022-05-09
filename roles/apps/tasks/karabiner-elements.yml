@@ -1,0 +1,5 @@
+
+- name: Karabiner-Elements
+  homebrew_cask:
+    name: karabiner-elements
+    state: "{{ State_KarabinerElements | default('absent')  }}"

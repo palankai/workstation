@@ -1,0 +1,4 @@
+- name: loupedeck
+  homebrew_cask:
+    name: loupedeck
+    state: "{{ Drivers_Loupedeck | default('present')  }}"

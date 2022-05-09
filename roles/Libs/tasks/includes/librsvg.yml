@@ -1,0 +1,4 @@
+- name: librsvg
+  homebrew:
+    name: librsvg
+    state: "{{ lib_librsvg | default('latest')  }}"

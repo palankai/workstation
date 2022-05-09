@@ -1,0 +1,22 @@
+
+- name: dotnet-sdk
+  tags:
+  - dotnet
+  homebrew_cask:
+    name: dotnet-sdk
+    state: "{{ Programming_DotNet | default('absent') }}"
+
+
+- name: dotnet-sdk
+  tags:
+  - dotnet
+  homebrew:
+    name: mono-libgdiplus
+    state: "{{ Programming_DotNet | default('absent') }}"
+
+- name: mono
+  tags:
+  - dotnet
+  homebrew_cask:
+    name: mono-mdk
+    state: "{{ Programming_DotNetcd  | default('absent') }}"

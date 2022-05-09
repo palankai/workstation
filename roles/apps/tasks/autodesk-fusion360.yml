@@ -1,0 +1,6 @@
+- name: Autodesk Fusion360
+  homebrew_cask:
+    name: autodesk-fusion360
+    state: "{{ State_Fusion360 | default('absent')  }}"
+
+

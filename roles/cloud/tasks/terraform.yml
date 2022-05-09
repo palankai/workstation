@@ -1,0 +1,24 @@
+- name: terraform | terraform-provisioner-ansible
+  homebrew:
+    name: terraform-provisioner-ansible
+    state: absent
+
+- name: terraform
+  homebrew:
+    name: terraform
+    state: "{{ STATES.terraform | default('latest')  }}"
+
+- name: terraform | iam-policy-json-to-terraform
+  homebrew:
+    name: iam-policy-json-to-terraform
+    state: absent
+
+- name: terraform | terraform-docs
+  homebrew:
+    name: terraform-docs
+    state: absent
+
+- name: terraform | terraform-inventory
+  homebrew:
+    name: terraform-inventory
+    state: absent

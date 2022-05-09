@@ -1,0 +1,4 @@
+- name: Blackblaze CLI (b2)
+  pip:
+    name: b2
+    state: absent

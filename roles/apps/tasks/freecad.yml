@@ -1,0 +1,4 @@
+- name: FreeCAD
+  homebrew_cask:
+    name: freecad
+    state: "{{ State_FreeCAD | default('absent')  }}"

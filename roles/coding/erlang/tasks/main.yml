@@ -1,0 +1,6 @@
+- name: erlang
+  tags:
+  - erlang
+  homebrew:
+    name: erlang
+    state: "{{ CODE.erlang | default('absent') }}"

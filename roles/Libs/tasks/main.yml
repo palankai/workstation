@@ -1,0 +1,4 @@
+
+- import_tasks: includes/librsvg.yml
+  tags:
+  - librsvg

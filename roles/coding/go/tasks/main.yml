@@ -1,0 +1,6 @@
+- name: go
+  tags:
+  - go
+  homebrew:
+    name: go
+    state: "{{ Programming_Go | default('absent') }}"

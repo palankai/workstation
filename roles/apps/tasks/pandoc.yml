@@ -1,0 +1,14 @@
+- name: Pandoc
+  homebrew:
+    name: pandoc
+    state: "{{ State_Pandoc | default('absent')  }}"
+
+- name: Pandoc | citeproc
+  homebrew:
+    name: pandoc-citeproc
+    state: "{{ State_Pandoc_Citeproc | default('absent')  }}"
+
+- name: Pandoc | basictex
+  homebrew_cask:
+    name: basictex
+    state: "{{ State_Pandoc | default('absent')  }}"

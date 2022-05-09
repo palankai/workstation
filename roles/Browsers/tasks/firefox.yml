@@ -1,0 +1,4 @@
+- name: "Browsers : Firefox"
+  homebrew_cask:
+    name: firefox
+    state: "{{ Browsers_Firefox | default('absent')  }}"

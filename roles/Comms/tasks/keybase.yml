@@ -1,0 +1,5 @@
+# Install manually, not signed
+- name: Keybase
+  homebrew_cask:
+    name: keybase
+    state: "{{ Comms_Keybase | default('absent')  }}"

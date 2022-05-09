@@ -1,0 +1,6 @@
+- name: clojure
+  tags:
+  - clojure
+  homebrew:
+    name: clojure
+    state: "{{ CODE.clojure | default('absent') }}"

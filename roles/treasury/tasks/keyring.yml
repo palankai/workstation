@@ -1,0 +1,5 @@
+- name: keyring
+  pip:
+    name:
+      - keyring
+    state: {{ State_Keyring | default('absent')  }}

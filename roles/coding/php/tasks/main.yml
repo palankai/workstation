@@ -1,0 +1,13 @@
+- name: php
+  tags:
+  - php
+  homebrew:
+    name: php
+    state: "{{ CODE.php | default('absent') }}"
+
+- name: composer
+  tags:
+  - php
+  homebrew:
+    name: composer
+    state: "{{ CODE.php | default('absent') }}"

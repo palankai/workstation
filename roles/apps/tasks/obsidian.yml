@@ -1,0 +1,5 @@
+
+- name: Obsidian
+  homebrew_cask:
+    name: obsidian
+    state: "{{ State_Obsidian | default('absent')  }}"

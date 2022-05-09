@@ -1,0 +1,4 @@
+- name: Heruko
+  homebrew:
+    name: heroku/brew/heroku
+    state: "{{ State_Heruko | default('absent')  }}"

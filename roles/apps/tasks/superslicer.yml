@@ -1,0 +1,4 @@
+- name: superslicer
+  homebrew_cask:
+    name: superslicer
+    state: "{{ State_SuperSlicer | default('absent')  }}"

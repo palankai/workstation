@@ -1,0 +1,4 @@
+- name: "Sublime Text"
+  homebrew_cask:
+    name: sublime-text
+    state: "{{ Editors_Sublime | default('present')  }}"

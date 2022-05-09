@@ -1,0 +1,4 @@
+- name: Redis
+  homebrew:
+    name: redis
+    state: "{{ STATES.redis | default('absent')  }}"

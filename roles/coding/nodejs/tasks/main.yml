@@ -1,0 +1,52 @@
+# Installed as part of the core - needed as package manager
+# - name: nodejs
+#   tags:
+#   - nodejs
+#   homebrew:
+#     name: nodejs
+#     state: latest
+
+- name: install nvm
+  git:
+    repo: https://github.com/nvm-sh/nvm.git
+    dest: ~/.nvm
+
+- name: typescript
+  community.general.yarn:
+    name: typescript
+    global: yes
+    state: latest
+
+- name: ts-node
+  community.general.yarn:
+    name: ts-node
+    global: yes
+    state: latest
+
+# App development
+
+- name: expo-cli
+  community.general.yarn:
+    name: expo-cli
+    global: yes
+    state: absent
+
+- name: react-native-cli
+  homebrew:
+    name: react-native-cli
+    state: absent
+
+- name: react-native-debugger
+  homebrew_cask:
+    name: react-native-debugger
+    state: absent
+
+- name: applesimutils
+  homebrew:
+    name: applesimutils
+    state: absent
+
+- name: watchman
+  homebrew:
+    name: watchman
+    state: latest

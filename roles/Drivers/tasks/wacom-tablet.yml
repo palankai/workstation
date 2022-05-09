@@ -1,0 +1,4 @@
+- name: wacom-tablet
+  homebrew_cask:
+    name: wacom-tablet
+    state: "{{ Drivers_WacomTablet | default('present')  }}"

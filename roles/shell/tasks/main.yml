@@ -1,0 +1,41 @@
+- name: git-prompt
+  homebrew:
+    name: bash-git-prompt
+    state: latest
+
+- name: oh-my-zsh
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh
+    dest: ~/.oh-my-zsh
+
+- import_tasks: tmux.yml
+  tags:
+  - tmux
+
+- name: Setup zshrc from dotfiles
+  file:
+    src: ~/opt/workstation/dotfiles/zshrc.sh
+    dest: ~/.zshrc
+    state: link
+    force: true
+
+- name: Setup shell_common from dotfiles
+  file:
+    src: ~/opt/workstation/dotfiles/shell_common.sh
+    dest: ~/.shell_common
+    state: link
+    force: true
+
+- name: Setup functions from dotfiles
+  file:
+    src: ~/opt/workstation/dotfiles/functions.sh
+    dest: ~/.functions
+    state: link
+    force: true
+
+- name: Setup work.sh
+  file:
+    src: ~/opt/workstation/sensitive/dotfiles/work.sh
+    dest: ~/.work.sh
+    state: link
+    force: true

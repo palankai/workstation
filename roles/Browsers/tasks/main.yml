@@ -1,0 +1,22 @@
+- import_tasks: firefox.yml
+  tags:
+  - Firefox
+
+- import_tasks: chrome.yml
+  tags:
+  - Chrome
+  - essential
+
+- import_tasks: chromium.yml
+  tags:
+  - Chromium
+  - essential
+
+- import_tasks: brave.yml
+  tags:
+  - Brave
+  - essential
+
+- import_tasks: tor.yml
+  tags:
+  - Tor

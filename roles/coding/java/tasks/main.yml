@@ -1,0 +1,34 @@
+- name: Java
+  tags:
+  - java
+  homebrew:
+    name: java
+    state: "{{ CODE.java | default('latest') }}"
+
+- name: Maven
+  tags:
+  - java
+  homebrew:
+    name: maven
+    state: "{{ CODE.java | default('latest') }}"
+
+- name: Gradle
+  tags:
+  - java
+  homebrew:
+    name: gradle
+    state: "{{ CODE.java | default('latest') }}"
+
+- name: Java Version Manager jenv
+  tags:
+  - java
+  homebrew:
+    name: jenv
+    state: absent
+
+- name: Java Documentation
+  tags:
+  - java
+  homebrew_cask:
+    name: oracle-jdk-javadoc
+    state: absent

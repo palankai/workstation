@@ -1,0 +1,9 @@
+- name: Try to install Chrome but we might not need it
+  block:
+    - name: "Browsers : Chrome"
+      homebrew_cask:
+        name: google-chrome
+        state: "{{ Browsers_Chrome | default('present')  }}"
+  rescue:
+    - debug:
+        msg: 'Check the error messages, you might need to run this with -K'

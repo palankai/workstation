@@ -1,0 +1,5 @@
+
+- name: raspberry
+  homebrew_cask:
+    name: raspberry-pi-imager
+    state: "{{ State_RaspberryPiImager | default('absent')  }}"

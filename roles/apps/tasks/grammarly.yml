@@ -1,0 +1,4 @@
+- name: Grammarly
+  homebrew_cask:
+    name: Grammarly
+    state: "{{ Apps_Grammarly | default('present')  }}"

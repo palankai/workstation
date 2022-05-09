@@ -1,0 +1,86 @@
+- name: Anaconda
+  tags:
+  - python
+  - anaconda
+  homebrew_cask:
+    name: anaconda
+    state: latest
+
+- name: Anaconda | fix folder owner
+  tags:
+  - python
+  - anaconda
+  become: true
+  file:
+    path: "/Users/{{ ansible_user_id }}/.conda"
+    owner: "{{ ansible_user_id }}"
+    recurse: yes
+
+- name: Setup condarc from dotfiles
+  file:
+    src: ~/opt/workstation/dotfiles/condarc.sh
+    dest: ~/.condarc
+    state: link
+    force: true
+
+- name: virtualenv
+  tags:
+  - python
+  pip:
+    name:
+      - virtualenv
+      - virtualenvwrapper
+    state: latest
+
+- name: pipenv
+  tags:
+  - python
+  homebrew:
+    name: pipenv
+    state: latest
+
+- name: pyenv
+  tags:
+  - python
+  homebrew:
+    name:
+      - pyenv
+      - pyenv-virtualenv
+      - pyenv-virtualenvwrapper
+      - pyenv-ccache
+      - pyenv-which-ext
+    state: latest
+
+- name: pyenv update
+  tags:
+  - python
+  git:
+    repo: git://github.com/pyenv/pyenv-update.git
+    dest: ~/.pyenv/plugins/pyenv-update
+
+- name: pyenv doctor
+  tags:
+  - python
+  git:
+    repo: git://github.com/pyenv/pyenv-doctor.git
+    dest: ~/.pyenv/plugins/pyenv-doctor
+
+- name: python tools
+  tags:
+  - python
+  pip:
+    name:
+    - black
+    - mypy
+    - flake8
+    - flake8-black
+    state: latest
+    executable: "{{ansible_python_interpreter | dirname }}/pip3"
+
+- name: travis CLI
+  tags:
+  - python
+  - travis
+  homebrew:
+    name: travis
+    state: latest

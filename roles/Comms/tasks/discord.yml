@@ -1,0 +1,5 @@
+- name: Discord
+  homebrew_cask:
+    name: discord
+    state: "{{ Comms_Discord | default('absent')  }}"
+

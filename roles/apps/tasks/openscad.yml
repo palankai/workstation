@@ -1,0 +1,5 @@
+
+- name: OpenSCAD
+  homebrew_cask:
+    name: openscad
+    state: "{{ State_OpenSCAD | default('absent')  }}"

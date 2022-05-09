@@ -1,0 +1,5 @@
+
+- name: Kindle
+  homebrew_cask:
+    name: kindle
+    state: "{{ State_Kindle | default('absent')  }}"

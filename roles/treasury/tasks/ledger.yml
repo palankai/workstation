@@ -1,0 +1,5 @@
+- name: ledger
+  homebrew_cask:
+    name: ledger-live
+    state: "{{ State_LedgerLive | default('absent')  }}"
+

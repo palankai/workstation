@@ -1,0 +1,39 @@
+- import_tasks: aws.yml
+  tags:
+  - aws
+
+- import_tasks: backblaze.yml
+  tags:
+  - backblaze
+
+- import_tasks: google-drive.yml
+  tags:
+  - google-drive
+
+- import_tasks: heruko.yml
+  tags:
+  - heruko
+
+- import_tasks: hetzner.yml
+  tags:
+  - hetzner
+
+- import_tasks: ngrok.yml
+  tags:
+  - ngrok
+
+- import_tasks: serverless.yml
+  tags:
+  - serverless
+
+- import_tasks: terraform.yml
+  tags:
+  - terraform
+
+- import_tasks: nomad.yml
+  tags:
+  - nomad
+
+- import_tasks: kubernetes.yml
+  tags:
+  - kubernetes

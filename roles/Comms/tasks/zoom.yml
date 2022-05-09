@@ -1,0 +1,10 @@
+- name: Install if it isn't managed outside
+  block:
+    - name: Zoom
+      homebrew_cask:
+        name: zoom
+        state: "{{ Comms_Zoom | default('latest')  }}"
+  rescue:
+    - debug:
+        msg: 'Check the error messages, you might need to run this with -K'
+  when: Comms_Zoom | default('latest') != 'managed'

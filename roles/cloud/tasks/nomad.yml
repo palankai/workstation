@@ -1,0 +1,4 @@
+- name: nomad
+  homebrew:
+    name: nomad
+    state: "{{ STATES.nomad | default('absent')  }}"

@@ -1,0 +1,4 @@
+- name: nosql-workbench (from AWS DynamoDB)
+  homebrew_cask:
+    name: nosql-workbench
+    state: "{{ Editors_NoSQLWorkbench | default('absent')  }}"

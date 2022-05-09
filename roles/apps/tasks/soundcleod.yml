@@ -1,0 +1,4 @@
+- name: soundcleod
+  homebrew_cask:
+    name: soundcleod
+    state: absent

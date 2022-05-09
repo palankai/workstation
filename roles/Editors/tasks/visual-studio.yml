@@ -1,0 +1,6 @@
+- name: Visual Studio
+  tags:
+  - dotnet
+  homebrew_cask:
+    name: visual-studio
+    state: "{{ Editors_VisualStudio | default('absent') }}"

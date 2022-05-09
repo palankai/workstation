@@ -1,0 +1,65 @@
+- name: Install GNU tools
+  homebrew:
+    name: ['coreutils', 'findutils', 'gnu-tar', 'gnu-sed', 'gawk', 'gnutls', 'gnu-indent', 'gnu-getopt', 'grep']
+    state: latest
+
+- name: Create ~/opt/ directories
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - ~/opt/bin
+    - ~/opt/gnubin
+    - ~/opt/gnuman
+    - ~/opt/gnuman/man1
+    - ~/opt/gnuman/man2
+    - ~/opt/gnuman/man3
+    - ~/opt/gnuman/man4
+    - ~/opt/gnuman/man5
+    - ~/opt/gnuman/man6
+    - ~/opt/gnuman/man7
+    - ~/opt/gnuman/man8
+    - ~/opt/gnuman/man9
+    - ~/opt/gnuman/mann
+
+- name: Gather gnubin files to link
+  find:
+    paths:
+      - "{{ ansible_env.HOMEBREW_PREFIX }}/opt/curl/bin"
+      - "{{ ansible_env.HOMEBREW_PREFIX }}/opt/coreutils/libexec/gnubin"
+      - "{{ ansible_env.HOMEBREW_PREFIX }}/opt/findutils/libexec/gnubin"
+      - "{{ ansible_env.HOMEBREW_PREFIX }}/opt/gnu-tar/libexec/gnubin"
+      - "{{ ansible_env.HOMEBREW_PREFIX }}/opt/gnu-sed/libexec/gnubin"
+      - "{{ ansible_env.HOMEBREW_PREFIX }}/opt/gawk/libexec/gnubin"
+      - "{{ ansible_env.HOMEBREW_PREFIX }}/opt/gnu-indent/libexec/gnubin"
+      - "{{ ansible_env.HOMEBREW_PREFIX }}/opt/grep/libexec/gnubin"
+    file_type: any
+  register: gnubin
+
+- name: Create symbolic links for GNU Packages
+  file:
+    src: "{{ item.path }}"
+    dest: "~/opt/gnubin/{{ item.path | basename }}"
+    state: link
+  with_items: "{{ gnubin.files }}"
+
+- name: Gather gnuman files to link
+  find:
+    paths:
+      - "{{ ansible_env.HOMEBREW_PREFIX }}/opt/coreutils/libexec/gnuman"
+      - "{{ ansible_env.HOMEBREW_PREFIX }}/opt/findutils/libexec/gnuman"
+      - "{{ ansible_env.HOMEBREW_PREFIX }}/opt/gnu-tar/libexec/gnuman"
+      - "{{ ansible_env.HOMEBREW_PREFIX }}/opt/gnu-sed/libexec/gnuman"
+      - "{{ ansible_env.HOMEBREW_PREFIX }}/opt/gawk/libexec/gnuman"
+      - "{{ ansible_env.HOMEBREW_PREFIX }}/opt/gnu-indent/libexec/gnuman"
+      - "{{ ansible_env.HOMEBREW_PREFIX }}/opt/grep/libexec/gnuman"
+    file_type: link
+    recurse: yes
+  register: gnuman
+
+- name: Create symbolic links for GNU MAN Packages
+  file:
+    src: "{{ item.path }}"
+    dest: "~/opt/gnuman/{{ item.path | dirname | basename }}/{{ item.path | basename }}"
+    state: link
+  with_items: "{{ gnuman.files }}"

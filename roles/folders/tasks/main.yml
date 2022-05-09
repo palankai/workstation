@@ -1,0 +1,30 @@
+- name: Create work directory
+  file:
+    path: '{{ item }}'
+    state: directory
+    mode: '0755'
+  loop:
+    - ~/work
+    - ~/work/made
+    - ~/work/made/analytics
+    - ~/work/made/docs
+    - ~/work/made/libraries
+    - ~/work/made/ops
+    - ~/work/made/services
+    - ~/work/personal
+    - ~/work/personal/docs
+    - ~/work/personal/libraries
+    - ~/work/personal/services
+    - ~/work/local
+
+- name: Create Projects folder
+  file:
+    path: ~/Projects
+    state: directory
+    mode: '0755'
+
+- name: Create Local folder
+  file:
+    path: ~/Local
+    state: directory
+    mode: '0755'

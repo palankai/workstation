@@ -1,0 +1,307 @@
+
+- import_tasks: arduino.yml
+  tags:
+  - arduino
+
+- import_tasks: kindle.yml
+  tags:
+  - kindle
+
+- import_tasks: obsidian.yml
+  tags:
+  - obsidian
+
+- import_tasks: pandoc.yml
+  tags:
+  - pandoc
+
+- import_tasks: etcher.yml
+  tags:
+  - etcher
+
+- import_tasks: backblaze.yml
+  tags:
+  - backblaze
+
+- import_tasks: soundcleod.yml
+  tags:
+  - soundcleod
+
+- import_tasks: obs.yml
+  tags:
+  - obs
+
+- import_tasks: calibre.yml
+  tags:
+  - calibre
+
+- import_tasks: chromedriver.yml
+  tags:
+  - chromedriver
+
+- import_tasks: consul.yml
+  tags:
+  - consul
+
+- import_tasks: insomnia.yml
+  tags:
+  - insomnia
+
+- import_tasks: postman.yml
+  tags:
+  - postman
+
+
+- import_tasks: mysql.yml
+  tags:
+  - mysql
+
+- import_tasks: nginx.yml
+  tags:
+  - nginx
+
+- import_tasks: redis.yml
+  tags:
+  - redis
+
+- import_tasks: vault.yml
+  tags:
+  - vault
+
+- import_tasks: raspberry.yml
+  tags:
+  - raspberry
+
+- import_tasks: catage.yml
+  tags:
+  - catage
+
+- import_tasks: creative-cloud.yml
+  tags:
+  - creative-cloud
+
+- import_tasks: duet.yml
+  tags:
+  - duet
+
+- import_tasks: viscosity.yml
+  tags:
+  - viscosity
+
+- import_tasks: tomtom.yml
+  tags:
+  - tomtom
+
+- import_tasks: kicad.yml
+  tags:
+  - kicad
+
+- import_tasks: karabiner-elements.yml
+  tags:
+  - karabiner-elements
+
+- import_tasks: freecad.yml
+  tags:
+  - freecad
+
+- import_tasks: microsoft-teams.yml
+  tags:
+  - microsoft-teams
+
+# - import_tasks: grammarly.yml
+#   tags:
+#   - grammarly
+
+- import_tasks: cura.yml
+  tags:
+  - cura
+
+- import_tasks: autodesk-fusion360.yml
+  tags:
+  - fusion360
+
+- import_tasks: blender.yml
+  tags:
+  - blender
+
+- import_tasks: openscad.yml
+  tags:
+  - openscad
+
+- name: terminal | wget
+  homebrew:
+    name:
+     - wget
+    state: latest
+
+- name: terminal | ack
+  homebrew:
+    name:
+     - ack
+    state: latest
+
+- name: terminal | pwgen - password generator
+  homebrew:
+    name:
+     - pwgen
+    state: latest
+
+- name: terminal | tree
+  homebrew:
+    name:
+     - tree
+    state: latest
+
+- name: terminal | Midnight commander
+  homebrew:
+    name:
+     - mc
+    state: latest
+
+- name: terminal | Postgresql
+  homebrew:
+    name: postgresql
+    state: latest
+
+- name: terminal | imagemagic
+  homebrew:
+    name: imagemagick
+    state: latest
+
+- name: terminal | Cookiecutter
+  homebrew:
+    name: cookiecutter
+    state: absent
+
+- name: terminal | bat
+  homebrew:
+    name:
+     - bat
+    state: latest
+
+- name: terminal | htop
+  homebrew:
+    name:
+     - htop
+    state: latest
+
+- name: terminal | jq
+  homebrew:
+    name: jq
+    state: latest
+
+- name: terminal | ag - the silver searcher
+  homebrew:
+    name: the_silver_searcher
+    state: absent
+
+- name: terminal | protobuf
+  homebrew:
+    name: protobuf
+    state: absent
+
+- name: terminal | graphviz
+  homebrew:
+    name: graphviz
+    state: latest
+
+- name: dekstop | Install meld
+  homebrew_cask:
+    name: meld
+    state: absent
+
+- name: desktop | iTerm2
+  homebrew_cask:
+    name: iterm2
+    state: latest
+
+- name: desktop | docker
+  homebrew_cask:
+    name: docker
+    state: latest
+
+- name: Make docker config link
+  file:
+    src: ~/opt/workstation/sensitive/dotfiles/docker-config.json
+    dest: ~/.docker/config.json
+    state: link
+
+- name: desktop | dropbox
+  homebrew_cask:
+    name: dropbox
+    state: absent
+
+- name: desktop | spotify
+  homebrew_cask:
+    name: spotify
+    state: latest
+
+- name: desktop | jetbrains
+  homebrew_cask:
+    name: jetbrains-toolbox
+    state: present
+
+
+- name: desktop | Jabra direct
+  tags:
+  - jabra
+  homebrew_cask:
+   name: jabra-direct
+   state: "{{ STATES.jabra | default('absent') }}"
+
+- name: desktop | logitech gaming software
+  homebrew_cask:
+    name: logitech-gaming-software
+    state: "{{ STATES.logitechgaming | default('latest')  }}"
+
+- name: desktop | synology
+  homebrew_cask:
+    name: synology-drive
+    state: "{{ STATES.synology | default('latest')  }}"
+
+- name: desktop | UHK Agent
+  homebrew_cask:
+    name: uhk-agent
+    state: "{{ STATES.uhk | default('absent')  }}"
+
+- name: desktop | vlc
+  homebrew_cask:
+    name: vlc
+    state: latest
+
+- name: desktop | xld (decode/convert/play various 'lossless' audio files)
+  homebrew_cask:
+    name: xld
+    state: absent
+
+- name: desktop | handbrake (tool for converting video)
+  homebrew_cask:
+    name: handbrake
+    state: absent
+
+- name: Try to install virtualbox but we might not need it
+  block:
+    - name: desktop | virtualbox
+      tags:
+        - virtualbox
+      homebrew_cask:
+        name: virtualbox
+        state: absent
+    - name: desktop | virtualbox-extension-pack
+      tags:
+        - virtualbox
+      homebrew_cask:
+        name: virtualbox-extension-pack
+        state: absent
+  rescue:
+    - debug:
+        msg: 'Check the error messages, you might need to run this with -K'
+
+- name: terminal | vagrant
+  homebrew_cask:
+    name: vagrant
+    state: absent
+
+- import_tasks: appstore.yml
+  tags:
+  - appstore

@@ -1,0 +1,15 @@
+# As package manager
+- name: nodejs
+  homebrew:
+    name: nodejs
+    state: latest
+
+- name: yarn
+  homebrew:
+    name: yarn
+    state: latest
+
+- name: yarn-completion
+  homebrew:
+    name: yarn-completion
+    state: latest

@@ -1,0 +1,5 @@
+
+- name: Viscosity VPN
+  homebrew_cask:
+    name: viscosity
+    state: "{{ STATES.viscosity | default('absent')  }}"

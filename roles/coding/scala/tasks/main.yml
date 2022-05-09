@@ -1,0 +1,27 @@
+- name: scala
+  tags:
+  - scala
+  homebrew:
+    name: scala
+    state: "{{ Programming_Scala | default('absent') }}"
+
+- name: scalaenv
+  tags:
+  - scala
+  homebrew:
+    name: scalaenv
+    state: "{{ Programming_Scala | default('absent') }}"
+
+- name: scalapack
+  tags:
+  - scala
+  homebrew:
+    name: scalapack
+    state: "{{ Programming_Scala | default('absent') }}"
+
+- name: scalastyle
+  tags:
+  - scala
+  homebrew:
+    name: scalastyle
+    state: "{{ Programming_Scala | default('absent') }}"

@@ -1,0 +1,5 @@
+- name: Vault
+  homebrew:
+    name: vault
+    state: "{{ STATES.vault | default('absent')  }}"
+

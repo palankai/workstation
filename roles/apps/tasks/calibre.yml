@@ -1,0 +1,5 @@
+- name: calibre
+  homebrew_cask:
+    name: calibre
+    state: "{{ STATES.calibre | default('absent')  }}"
+

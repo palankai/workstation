@@ -70,6 +70,9 @@ else
   (cd ~/opt/workstation; git pull)
 fi
 
+echo "[-] Clone sensitive workstation files"
+(cd ~/opt; git submodule update --init --recursive)
+
 rm ~/.gnupg/gpg-agent.conf
 rm ~/.gnupg/gpg.conf
 ln -s ~/opt/workstation/dotfiles/gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf

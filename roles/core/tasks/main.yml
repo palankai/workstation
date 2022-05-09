@@ -1,0 +1,58 @@
+- name: Get python requirements
+  pip:
+    name:
+    - beautifulsoup4
+    - cryptography
+    state: present
+    executable: "{{ ansible_playbook_python | dirname }}/pip3"
+
+- import_tasks: gnu.yml
+  tags:
+  - gnu
+
+- import_tasks: git.yml
+  tags:
+  - git
+
+- import_tasks: node.yml
+  tags:
+  - node
+
+- name: Setup ssh
+  file:
+    src: ~/opt/workstation/sensitive/dotfiles/ssh_config
+    dest: ~/.ssh/config
+    state: link
+
+- name: curl
+  homebrew:
+    name: curl
+    state: latest
+
+- name: autoconf
+  homebrew:
+    name:
+     - autoconf
+    state: latest
+
+- name: watch
+  homebrew:
+    name:
+     - watch
+    state: latest
+
+- name: dnsmasq
+  homebrew:
+    name:
+     - dnsmasq
+    state: latest
+
+- name: OpenSSL
+  homebrew:
+    name: openssl
+    state: latest
+
+- name: gettext
+  homebrew:
+    name: gettext
+    state: latest

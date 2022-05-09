@@ -1,0 +1,50 @@
+
+STATES:
+  blender: absent
+  adobe: absent
+  backblaze: absent
+  logitechgaming: absent
+  synology: absent
+  chrome: latest
+  bluejeans: absent
+  obs: absent
+  affinityDesigner: absent
+  slack: absent
+  raspberry: absent
+  onepasswordcli: absent
+  duet: absent
+  aws_vault: absent
+  tomtom: absent
+  consul: present
+
+CODE:
+  clojure: absent
+  dotnet: absent
+  mono: absent
+  erlang: absent
+  groovy: absent
+  haskell: absent
+  kotlin: absent
+  php: absent
+  r: absent
+  scala: absent
+  unity: absent
+
+Browsers_Firefox: absent
+Browsers_Chrome: present
+Browsers_Chromium: latest
+Browsers_Tor: latest
+
+Comms_Zoom: managed
+Comms_Slack: managed
+Comms_Bluejeans: absent
+Comms_Weechat: absent
+Comms_Telegram: absent
+
+Editors_Atom: absent
+Editors_VisualStudio: absent
+
+
+State_KarabinerElements: present
+State_MicrosoftTeams: latest
+State_Obsidian: latest

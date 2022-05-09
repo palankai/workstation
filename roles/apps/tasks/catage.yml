@@ -1,0 +1,5 @@
+- name: Catage
+  community.general.yarn:
+    name: catage
+    global: yes
+    state: absent

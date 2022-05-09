@@ -1,0 +1,4 @@
+- name: Atom
+  homebrew_cask:
+    name: atom
+    state: "{{ Editors_Atom | default('absent')  }}"

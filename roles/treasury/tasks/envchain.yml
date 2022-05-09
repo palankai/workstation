@@ -1,0 +1,5 @@
+- name: envchain
+  homebrew:
+    name:
+      - envchain
+    state: latest

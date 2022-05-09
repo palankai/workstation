@@ -3,8 +3,8 @@
 Migration from a different repository is ongoing.
 
 This repository contains my macOS configuration.
-Most of the steps are automated. The script might ask for sudo password.
-There are some manual steps after the installations.
+Most of the steps are automated. The script might ask for the sudo password.
+There are some manual steps after the installation.
 The goal is not to fully automate but ensure the smoothest possible start on a new
 installation.
 

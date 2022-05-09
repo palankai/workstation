@@ -1,0 +1,5 @@
+- name: Google Drive
+  homebrew_cask:
+    name: google-drive
+    state: "{{ State_GoogleDrive | default('absent')  }}"
+

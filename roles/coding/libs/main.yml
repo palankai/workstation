@@ -1,0 +1,4 @@
+- name: ta-lib
+  homebrew:
+    name: ta-lib
+    state: absent
