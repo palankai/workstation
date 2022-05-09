@@ -50,6 +50,7 @@ echo "  [-] Setup links"
 ln -sF $(which pinentry-mac) ~/opt/links/pinentry-mac
 ln -sF $(which gpgconf) ~/opt/links/gpgconf
 
+rm -f ~/.gnupg/gpg-agent.conf
 echo "pinentry-program $(which pinentry-mac)" > ~/.gnupg/gpg-agent.conf
 echo "  [-] Start GPG Agent"
 killall gpg-agent || true
@@ -87,5 +88,7 @@ ln -s ~/opt/workstation/bin/homebrew.gpg.gpg-agent.plist ~/Library/LaunchAgents/
 launchctl load -F ~/Library/LaunchAgents/homebrew.gpg.gpg-agent.plist
 
 export KEYID=0x4C4A8C7E5C4575B7
+
+eval $($(brew --prefix)/bin/brew shellenv)
 
 echo "[*] DONE."
