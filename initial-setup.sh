@@ -72,8 +72,8 @@ fi
 echo "[-] Clone sensitive workstation files"
 (cd ~/opt/workstation; git submodule update --init --recursive)
 
-rm ~/.gnupg/gpg-agent.conf
-rm ~/.gnupg/gpg.conf
+rm -f ~/.gnupg/gpg-agent.conf
+rm -f ~/.gnupg/gpg.conf
 ln -s ~/opt/workstation/dotfiles/gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 ln -s ~/opt/workstation/dotfiles/gnupg/gpg.conf ~/.gnupg/gpg.conf
 ln -s ~/opt/workstation/dotfiles/gnupg/scdaemon.conf ~/.gnupg/scdaemon.conf
