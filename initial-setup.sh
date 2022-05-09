@@ -70,7 +70,7 @@ else
 fi
 
 echo "[-] Clone sensitive workstation files"
-(cd ~/opt; git submodule update --init --recursive)
+(cd ~/opt/workstation; git submodule update --init --recursive)
 
 rm ~/.gnupg/gpg-agent.conf
 rm ~/.gnupg/gpg.conf
