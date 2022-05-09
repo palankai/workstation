@@ -61,7 +61,7 @@ export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
 echo "[-] Install cloning workstation setup..."
 mkdir -p ~/opt
 
-if [ ! -d "~/opt/workstation" ] ; then
+if [ ! -d "$HOME/opt/workstation" ] ; then
   echo "[-] Clone workstation setup"
   (cd ~/opt; git clone git@github.com:palankai/workstation.git)
 else
