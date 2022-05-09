@@ -76,7 +76,7 @@ rm -f ~/.gnupg/gpg-agent.conf
 rm -f ~/.gnupg/gpg.conf
 ln -s ~/opt/workstation/dotfiles/gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 ln -s ~/opt/workstation/dotfiles/gnupg/gpg.conf ~/.gnupg/gpg.conf
-ln -s ~/opt/workstation/dotfiles/gnupg/scdaemon.conf ~/.gnupg/scdaemon.conf
+ln -sf ~/opt/workstation/dotfiles/gnupg/scdaemon.conf ~/.gnupg/scdaemon.conf
 
 killall gpg-agent
 # gpgconf --launch gpg-agent
